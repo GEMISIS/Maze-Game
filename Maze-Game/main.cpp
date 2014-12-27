@@ -8,6 +8,7 @@ bool quitGame = false;
 
 int main()
 {
+	srand(NULL);
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Maze Game");
 
 	coreState.SetWindow(&window);

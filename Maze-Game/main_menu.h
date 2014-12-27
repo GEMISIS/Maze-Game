@@ -1,7 +1,6 @@
 #pragma once
 
 #include "game_state.h"
-#include "entity_manager.h"
 
 class main_menu : public tiny_state
 {

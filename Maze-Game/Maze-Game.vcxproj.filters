@@ -28,15 +28,24 @@
     <Filter Include="Source Files\Entities">
       <UniqueIdentifier>{a635741d-b501-45ef-8223-e7815d43d355}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Entities\Enemies">
+      <UniqueIdentifier>{2f3bec30-ee57-4d4b-bcf2-1a11c0a33704}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test_state.cpp">
+    <ClCompile Include="main_menu.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="main_menu.cpp">
+    <ClCompile Include="main_game.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="game_over.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="winning_screen.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,22 +53,52 @@
     <ClInclude Include="game_state.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="test_state.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="entity_manager.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="tester.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="tester2.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="main_menu.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="mainCharacter.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="key.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="door.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="exit_door.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_easy.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_medium.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_hard.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_follow.h">
+      <Filter>Header Files\Entities\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="winning_screen.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>

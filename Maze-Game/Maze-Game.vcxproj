@@ -68,18 +68,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game_over.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_menu.cpp" />
-    <ClCompile Include="test_state.cpp" />
+    <ClCompile Include="main_game.cpp" />
+    <ClCompile Include="winning_screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="door.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemy_easy.h" />
+    <ClInclude Include="enemy_follow.h" />
+    <ClInclude Include="enemy_hard.h" />
+    <ClInclude Include="enemy_medium.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="entity_manager.h" />
+    <ClInclude Include="exit_door.h" />
+    <ClInclude Include="game_over.h" />
     <ClInclude Include="game_state.h" />
+    <ClInclude Include="key.h" />
     <ClInclude Include="main_menu.h" />
-    <ClInclude Include="tester.h" />
-    <ClInclude Include="tester2.h" />
-    <ClInclude Include="test_state.h" />
+    <ClInclude Include="mainCharacter.h" />
+    <ClInclude Include="wall.h" />
+    <ClInclude Include="main_game.h" />
+    <ClInclude Include="winning_screen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

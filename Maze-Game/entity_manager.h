@@ -19,7 +19,7 @@ public:
 		this->collisionsEvent = collisionsEvent;
 	}
 
-	void AddEntity(std::string name, Entity* entity)
+	void AddEntity(std::string &name, Entity* entity)
 	{
 		std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
 		while (found != this->entities.end())
@@ -28,6 +28,16 @@ public:
 			found = this->entities.find(name);
 		}
 		this->entities.insert(std::make_pair(name, entity));
+	}
+
+	Entity* Get(std::string name)
+	{
+		std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
+		if (found != this->entities.end())
+		{
+			return found->second;
+		}
+		return NULL;
 	}
 
 	void Update()

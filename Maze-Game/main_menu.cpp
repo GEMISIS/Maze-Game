@@ -1,5 +1,5 @@
 #include "main_menu.h"
-#include "test_state.h"
+#include "main_game.h"
 
 main_menu::main_menu()
 {
@@ -49,7 +49,7 @@ void main_menu::Update(sf::RenderWindow* window)
 		switch (this->selected)
 		{
 		case 0:
-			coreState.SetState(new test_state());
+			coreState.SetState(new main_game());
 			break;
 		case 1:
 			quitGame = true;
