@@ -1,16 +1,17 @@
 #include "game_state.h"
-#include "test_state.h"
+#include "main_menu.h"
 
 #include <Windows.h>
 
 game_state coreState;
+bool quitGame = false;
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Maze Game");
 
 	coreState.SetWindow(&window);
-	coreState.SetState(new test_state());
+	coreState.SetState(new main_menu());
 
 	while (window.isOpen())
 	{
@@ -28,6 +29,11 @@ int main()
 		coreState.Update();
 
 		window.display();
+
+		if (quitGame)
+		{
+			window.close();
+		}
 
 		Sleep(5);
 	}

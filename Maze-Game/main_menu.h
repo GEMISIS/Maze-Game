@@ -12,4 +12,9 @@ public:
 	void Render(sf::RenderWindow* window);
 	void Destroy(sf::RenderWindow* window);
 private:
+	int selected;
+	sf::Font font;
+	sf::Text logo, play, quit;
+
+	int up, down;
 };

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main_menu.h"
 #include "test_state.h"
 #include "tester.h"
 #include "tester2.h"
@@ -14,23 +15,29 @@ void UpdateCollisions(Entity* entityA, Entity* entityB)
 
 test_state::test_state()
 {
+	this->manager = new EntityManager();
 }
 
 void test_state::Initialize(sf::RenderWindow* window)
 {
-	this->manager.SetCollisionMethod(UpdateCollisions);
-	this->manager.AddEntity("tester", new tester());
-	this->manager.AddEntity("tester2", new tester2());
+	this->manager->SetCollisionMethod(UpdateCollisions);
+	this->manager->AddEntity("tester", new tester());
+	this->manager->AddEntity("tester2", new tester2());
 }
 void test_state::Update(sf::RenderWindow* window)
 {
-	manager.Update();
+	manager->Update();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
+	{
+		coreState.SetState(new main_menu());
+	}
 }
 void test_state::Render(sf::RenderWindow* window)
 {
-	manager.Render(window);
+	manager->Render(window);
 }
 void test_state::Destroy(sf::RenderWindow* window)
 {
+	delete manager;
 }
 

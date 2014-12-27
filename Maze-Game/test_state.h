@@ -12,5 +12,5 @@ public:
 	void Render(sf::RenderWindow* window);
 	void Destroy(sf::RenderWindow* window);
 private:
-	EntityManager manager;
+	EntityManager* manager;
 };

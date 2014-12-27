@@ -36,7 +36,7 @@ public:
 		if (this->state != NULL)
 		{
 			this->state->Destroy(this->window);
-			delete state;
+			delete this->state;
 		}
 		this->state = state;
 		if (this->state != NULL)
@@ -56,9 +56,9 @@ public:
 
 	~game_state()
 	{
-		if (state != NULL)
+		if (this->state != NULL)
 		{
-			delete state;
+			delete this->state;
 		}
 	}
 private:
@@ -67,3 +67,4 @@ private:
 };
 
 extern game_state coreState;
+extern bool quitGame;

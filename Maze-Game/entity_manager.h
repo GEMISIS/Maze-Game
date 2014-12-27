@@ -36,26 +36,29 @@ public:
 
 		for (auto& iterator : this->entities)
 		{
-			if (this->collisionsEvent != NULL)
+			if (iterator.second != NULL)
 			{
-				for (auto& iterator2 : this->entities)
+				if (this->collisionsEvent != NULL)
 				{
-					if (iterator != iterator2)
+					for (auto& iterator2 : this->entities)
 					{
-						if (iterator.second->Collision(iterator2.second))
+						if (iterator != iterator2)
 						{
-							this->collisionsEvent(iterator.second, iterator2.second);
+							if (iterator.second->Collision(iterator2.second))
+							{
+								this->collisionsEvent(iterator.second, iterator2.second);
+							}
 						}
 					}
 				}
-			}
-			if (iterator.second->Active())
-			{
-				iterator.second->Update();
-			}
-			else
-			{
-				toRemove.push_back(iterator.first);
+				if (iterator.second->Active())
+				{
+					iterator.second->Update();
+				}
+				else
+				{
+					toRemove.push_back(iterator.first);
+				}
 			}
 		}
 
@@ -64,17 +67,30 @@ public:
 			this->entities.erase(toRemove[toRemove.size() - 1]);
 			toRemove.pop_back();
 		}
+		toRemove.clear();
 	}
 
 	void Render(sf::RenderWindow* window)
 	{
 		for (auto& iterator : this->entities)
 		{
-			if (iterator.second->Active())
+			if (iterator.second != NULL)
 			{
-				window->draw(*iterator.second);
+				if (iterator.second->Active())
+				{
+					window->draw(*iterator.second);
+				}
 			}
 		}
+	}
+
+	~EntityManager()
+	{
+		for (auto& iterator : this->entities)
+		{
+			delete iterator.second;
+		}
+		this->entities.clear();
 	}
 private:
 	std::unordered_map<std::string, Entity*> entities;
